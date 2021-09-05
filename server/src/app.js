@@ -9,6 +9,11 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors())
 
+require('./userPassport')
+
+require('./routes')(app)
+
+
 require('./routes')(app)
 let port = process.env.PORT || config.port;
 
